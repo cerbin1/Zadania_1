@@ -3,5 +3,5 @@ project(Zadania_1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES Zadanie_1/zadanie_1.cpp)
-add_executable(Zadania_1 ${SOURCE_FILES})
+add_executable(Zadanie_1 Zadanie_1/zadanie_1.cpp)
+add_executable(Zadanie_3 Zadanie_3/zadanie_3.cpp)

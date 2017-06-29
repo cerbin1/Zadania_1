@@ -10,16 +10,13 @@ int main() {
 
     for (int i = 0; i < width; ++i) {
         for (int j = 0; j < height; ++j) {
-            std::cout << j << "," << i << " ";
             array[j][i] = false;
         }
-        std::cout << std::endl;
     }
 
     bool done = true, czyTak = true;
     int x = width - 1, y = 0;
     for (int k = 0; k < width * height - 1 && done; ++k) {
-        std::cout << "x: " << x << ", y: " << y << std::endl;
         int number;
         std::cin >> number;
         switch (number) {

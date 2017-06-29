@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
 
 
 bool isAlreadyInArray(int number);
@@ -53,14 +52,6 @@ int main() {
     }
 
     std::cout << sum << std::endl;
-
-    for (int k = 0; k < n; ++k) {
-        for (int l = 0; l < n; ++l) {
-            std::cout << array[l][k];
-            std::cout << "[" << l << ", " << k << "]";
-        }
-        std::cout << std::endl;
-    }
 
     return 0;
 }

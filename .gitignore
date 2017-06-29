@@ -33,3 +33,7 @@
 *.out
 *.app
 
+/.idea/misc.xml
+/.idea/Zadania_1.iml
+/.idea/modules.xml
+/.idea/vcs.xml

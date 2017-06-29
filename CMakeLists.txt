@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(Zadanie_1 Zadanie_1/zadanie_1.cpp)
 add_executable(Zadanie_3 Zadanie_3/zadanie_3.cpp)
+add_executable(Zadanie_4 Zadanie_4/zadanie_4.cpp)

@@ -23,7 +23,9 @@ int main() {
         }
     }
 
-    std::cout << indexOfRowWithMostOnesCount << std::endl;
+    if (indexOfRowWithMostOnesCount != -1) {
+        std::cout << indexOfRowWithMostOnesCount << std::endl;
+    }
 
     return 0;
 }

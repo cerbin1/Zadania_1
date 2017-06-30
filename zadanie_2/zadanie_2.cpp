@@ -4,9 +4,9 @@ int main() {
 
     int width, height;
     std::cin >> width >> height;
+    if (width < 1 || width > 30 || height < 1 || height > 30) return 0;
 
     bool array[width][height];
-
 
     for (int i = 0; i < width; ++i) {
         for (int j = 0; j < height; ++j) {
@@ -151,6 +151,7 @@ int main() {
             }
             default: {
                 done = false;
+                czyTak = false;
             };
         }
     }

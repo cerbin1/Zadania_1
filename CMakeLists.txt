@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(Zadania_1)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 98)
 
 add_executable(Zadanie_1 Zadanie_1/zadanie_1.cpp)
 add_executable(Zadanie_2 Zadanie_2/zadanie_2.cpp)

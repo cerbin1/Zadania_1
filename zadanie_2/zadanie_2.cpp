@@ -15,15 +15,25 @@ int main() {
     }
 
     bool done = true, czyTak = true;
-    int x = width - 1, y = 0;
+    int x = 0, y = width - 1;
+    array[x][y] = true;
     for (int k = 0; k < width * height - 1 && done; ++k) {
+        for (int j = 0; j < width; ++j) {
+            for (int i = 0; i < height; ++i) {
+                std::cout << array[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
         int number;
         std::cin >> number;
         switch (number) {
             case 0: {
-                x--;
-                y += 2;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y--;
+                x += 2;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -37,9 +47,9 @@ int main() {
                 break;
             }
             case 1: {
-                x -= 2;
-                y++;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y -= 2;
+                x++;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -53,9 +63,9 @@ int main() {
                 break;
             }
             case 2: {
-                x -= 2;
-                y--;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y -= 2;
+                x--;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -69,9 +79,9 @@ int main() {
                 break;
             }
             case 3: {
-                x--;
-                y -= 2;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y--;
+                x -= 2;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -85,9 +95,9 @@ int main() {
                 break;
             }
             case 4: {
-                x++;
-                y -= 2;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y++;
+                x -= 2;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -101,9 +111,9 @@ int main() {
                 break;
             }
             case 5: {
-                x += 2;
-                y--;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y += 2;
+                x--;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -117,9 +127,9 @@ int main() {
                 break;
             }
             case 6: {
-                x += 2;
-                y++;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y += 2;
+                x++;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;
@@ -133,9 +143,9 @@ int main() {
                 break;
             }
             case 7: {
-                x++;
-                y += 2;
-                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+                y++;
+                x += 2;
+                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
                     czyTak = false;
                     break;

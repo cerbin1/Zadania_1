@@ -12,15 +12,17 @@ std::vector<int> vector;
 int main() {
     int n;
     std::cin >> n;
+    if (n < 1) return 0;
     int array[n][n];
 
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
             int number;
             std::cin >> number;
+            if (number < 1) return 0;
             if (isAlreadyInArray(number)) {
                 std::cout << -1;
-                return 1;
+                return 0;
             }
             vector.push_back(number);
             array[j][i] = number;
@@ -36,7 +38,7 @@ int main() {
         }
         if (sum != countedSum) {
             std::cout << -1;
-            return 1;
+            return 0;
         }
 
     }
@@ -48,7 +50,7 @@ int main() {
         }
         if (sum != countedSum) {
             std::cout << -1;
-            return 1;
+            return 0;
         }
     }
 

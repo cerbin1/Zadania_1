@@ -14,9 +14,8 @@ int main() {
         }
     } while (number >= 0);
 
-    std::vector<int> iterator(vector.end() - amountOfNumbersToDisplay, vector.end());
-    for (const auto &element: iterator) {
-        std::cout << element << " ";
+    for (int i = amountOfNumbersToDisplay; i > 0; --i) {
+        std::cout << vector[vector.size() - i ] << " ";
     }
 
     return 0;

@@ -18,15 +18,6 @@ int main() {
     int x = 0, y = width - 1;
     array[x][y] = true;
     for (int k = 0; k < width * height - 1 && done; ++k) {
-        for (int j = 0; j < width; ++j) {
-            for (int i = 0; i < height; ++i) {
-                std::cout << array[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-        std::cout << std::endl;
-        std::cout << std::endl;
-        std::cout << std::endl;
         int number;
         std::cin >> number;
         switch (number) {

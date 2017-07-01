@@ -14,10 +14,12 @@ int main() {
         }
     }
 
-    bool done = true, czyTak = true;
+    bool done = true, isBoardPassedByHorse = true;
     int x = 0, y = width - 1;
-    array[x][y] = true;
     for (int k = 0; k < width * height - 1 && done; ++k) {
+        if (x == 0 && y == width - 1) {
+            array[x][y] = true;
+        }
         for (int j = 0; j < width; ++j) {
             for (int i = 0; i < height; ++i) {
                 std::cout << array[i][j] << " ";
@@ -91,7 +93,7 @@ int main() {
                 x -= 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
@@ -151,11 +153,11 @@ int main() {
 
     for (int i = 0; i < width; ++i) {
         for (int j = 0; j < height; ++j) {
-            if (!array[j][i]) czyTak = false;
+            if (!array[j][i]) isBoardPassedByHorse = false;
         }
     }
 
-    if (czyTak) {
+    if (isBoardPassedByHorse) {
         std::cout << "TAK";
     } else {
         std::cout << "NIE";

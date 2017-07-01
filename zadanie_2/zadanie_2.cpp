@@ -18,6 +18,15 @@ int main() {
     int x = 0, y = width - 1;
     array[x][y] = true;
     for (int k = 0; k < width * height - 1 && done; ++k) {
+        for (int j = 0; j < width; ++j) {
+            for (int i = 0; i < height; ++i) {
+                std::cout << array[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
         int number;
         std::cin >> number;
         switch (number) {
@@ -26,12 +35,10 @@ int main() {
                 x += 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -42,12 +49,10 @@ int main() {
                 x++;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -58,12 +63,10 @@ int main() {
                 x--;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -74,12 +77,10 @@ int main() {
                 x -= 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -95,7 +96,6 @@ int main() {
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -106,12 +106,10 @@ int main() {
                 x--;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -122,12 +120,10 @@ int main() {
                 x++;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -138,12 +134,10 @@ int main() {
                 x += 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
-                    czyTak = false;
                     break;
                 }
                 array[x][y] = true;
@@ -151,12 +145,21 @@ int main() {
             }
             default: {
                 done = false;
-                czyTak = false;
             };
         }
     }
 
-    std::cout << (czyTak ? "TAK" : "NIE");
+    for (int i = 0; i < width; ++i) {
+        for (int j = 0; j < height; ++j) {
+            if (!array[j][i]) czyTak = false;
+        }
+    }
+
+    if (czyTak) {
+        std::cout << "TAK";
+    } else {
+        std::cout << "NIE";
+    }
 
 
     return 0;

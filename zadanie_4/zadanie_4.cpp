@@ -40,7 +40,6 @@ int main() {
             std::cout << -1;
             return 0;
         }
-
     }
 
     for (int i = 0; i < n; ++i) {
@@ -59,14 +58,6 @@ int main() {
     return 0;
 }
 
-int getSum(int n) {
-    int sum = 0;
-    for (int i = 0; i < n; ++i) {
-        sum += vector[i];
-    }
-    return sum;
-}
-
 bool isAlreadyInArray(int number) {
     for (int i = 0; i < vector.size(); ++i) {
         if (vector[i] == number) {
@@ -74,4 +65,12 @@ bool isAlreadyInArray(int number) {
         }
     }
     return false;
+}
+
+int getSum(int n) {
+    int sum = 0;
+    for (int i = 0; i < n; ++i) {
+        sum += vector[i];
+    }
+    return sum;
 }

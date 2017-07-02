@@ -3,8 +3,10 @@
 int main() {
 
     int width, height;
-    std::cin >> width >> height;
-    if (width < 1 || width > 30 || height < 1 || height > 30) return 0;
+    std::cin >> height >> width;
+    if (width < 1 || width > 30 || height < 1 || height > 30) {
+        return 0;
+    }
 
     bool array[width][height];
 

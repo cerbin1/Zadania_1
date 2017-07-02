@@ -4,7 +4,9 @@ int main() {
 
     int width, height;
     std::cin >> height >> width;
+
     if (width < 1 || width > 30 || height < 1 || height > 30) {
+        std::cout << "NIE";
         return 0;
     }
 

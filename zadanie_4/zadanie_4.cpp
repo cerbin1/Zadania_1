@@ -36,10 +36,6 @@ int main() {
         }
     }
 
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << std::endl;
-
     int sum = 0;
     for (int i = 0; i < n; ++i) {
         sum += array[i][0];
@@ -48,36 +44,26 @@ int main() {
     for (int i = 0; i < n; ++i) {
         int countedSum = 0;
         for (int j = 0; j < n; ++j) {
-            std::cout << "[" << j << "," << i << "] " << array[j][i];
             countedSum += array[j][i];
         }
         if (sum != countedSum) {
             std::cout << -1;
             return 0;
         }
-        std::cout << std::endl;
     }
-
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << std::endl;
 
     for (int i = 0; i < n; ++i) {
         int countedSum = 0;
         for (int j = 0; j < n; ++j) {
-            std::cout << "[" << j << "," << i << "] " << array[i][j];
             countedSum += array[i][j];
         }
         if (sum != countedSum) {
             std::cout << -1;
             return 0;
         }
-        std::cout << std::endl;
     }
 
     std::cout << std::endl << sum << std::endl;
 
     return 0;
 }
-
-//std::cout << "[" << j << "," << i << "] " << number;        std::cout << std::endl;

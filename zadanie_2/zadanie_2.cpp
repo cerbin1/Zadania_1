@@ -1,10 +1,12 @@
 #include <iostream>
 
 int main() {
-
     int height, width;
     std::cin >> height >> width;
-    if (height < 1 || height > 30 || width < 1 || width > 30) return 0;
+
+    if (height < 1 || height > 30 || width < 1 || width > 30) {
+        return 0;
+    }
 
     bool array[width][height];
 
@@ -17,17 +19,11 @@ int main() {
     bool done = true, isBoardPassedByHorse = true;
     int x = 0, y = height - 1;
     array[x][y] = true;
+
     for (int k = 0; k < height * width - 1 && done; ++k) {
-
-        for (int j = 0; j < height; ++j) {
-            for (int i = 0; i < width; ++i) {
-                std::cout << array[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-
         int number;
         std::cin >> number;
+
         switch (number) {
             case 0: {
                 y--;

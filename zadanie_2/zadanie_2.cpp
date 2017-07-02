@@ -2,29 +2,29 @@
 
 int main() {
 
-    int width, height;
-    std::cin >> width >> height;
-    if (width < 1 || width > 30 || height < 1 || height > 30) return 0;
+    int height, width;
+    std::cin >> height >> width;
+    if (height < 1 || height > 30 || width < 1 || width > 30) return 0;
 
-    bool array[width][height];
+    bool array[height][width];
 
-    for (int i = 0; i < width; ++i) {
-        for (int j = 0; j < height; ++j) {
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
             array[j][i] = false;
         }
     }
 
     bool done = true, isBoardPassedByHorse = true;
-    int x = 0, y = width - 1;
+    int x = 0, y = height - 1;
     array[x][y] = true;
-    for (int k = 0; k < width * height - 1 && done; ++k) {
+    for (int k = 0; k < height * width - 1 && done; ++k) {
         int number;
         std::cin >> number;
         switch (number) {
             case 0: {
                 y--;
                 x += 2;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -40,7 +40,7 @@ int main() {
             case 1: {
                 y -= 2;
                 x++;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -56,7 +56,7 @@ int main() {
             case 2: {
                 y -= 2;
                 x--;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -72,7 +72,7 @@ int main() {
             case 3: {
                 y--;
                 x -= 2;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -88,7 +88,7 @@ int main() {
             case 4: {
                 y++;
                 x -= 2;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -104,7 +104,7 @@ int main() {
             case 5: {
                 y += 2;
                 x--;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -120,7 +120,7 @@ int main() {
             case 6: {
                 y += 2;
                 x++;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;
@@ -136,7 +136,7 @@ int main() {
             case 7: {
                 y++;
                 x += 2;
-                if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
+                if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
                     done = false;
                     isBoardPassedByHorse = false;
                     break;

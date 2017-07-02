@@ -3,12 +3,8 @@
 int main() {
 
     int width, height;
-    std::cin >> height >> width;
-
-    if (width < 1 || width > 30 || height < 1 || height > 30) {
-        std::cout << "NIE";
-        return 0;
-    }
+    std::cin >> width >> height;
+    if (width < 1 || width > 30 || height < 1 || height > 30) return 0;
 
     bool array[width][height];
 
@@ -20,19 +16,8 @@ int main() {
 
     bool done = true, isBoardPassedByHorse = true;
     int x = 0, y = width - 1;
+    array[x][y] = true;
     for (int k = 0; k < width * height - 1 && done; ++k) {
-        if (x == 0 && y == width - 1) {
-            array[x][y] = true;
-        }
-        for (int j = 0; j < width; ++j) {
-            for (int i = 0; i < height; ++i) {
-                std::cout << array[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-        std::cout << std::endl;
-        std::cout << std::endl;
-        std::cout << std::endl;
         int number;
         std::cin >> number;
         switch (number) {
@@ -41,10 +26,12 @@ int main() {
                 x += 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -55,10 +42,12 @@ int main() {
                 x++;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -69,10 +58,12 @@ int main() {
                 x--;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -83,10 +74,12 @@ int main() {
                 x -= 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -102,6 +95,7 @@ int main() {
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -112,10 +106,12 @@ int main() {
                 x--;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -126,10 +122,12 @@ int main() {
                 x++;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -140,10 +138,12 @@ int main() {
                 x += 2;
                 if (x < 0 || x > height - 1 || y < 0 || y > width - 1) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 if (array[x][y]) {
                     done = false;
+                    isBoardPassedByHorse = false;
                     break;
                 }
                 array[x][y] = true;
@@ -151,21 +151,13 @@ int main() {
             }
             default: {
                 done = false;
+                isBoardPassedByHorse = false;
             };
         }
     }
 
-    for (int i = 0; i < width; ++i) {
-        for (int j = 0; j < height; ++j) {
-            if (!array[j][i]) isBoardPassedByHorse = false;
-        }
-    }
-
-    if (isBoardPassedByHorse) {
-        std::cout << "TAK";
-    } else {
-        std::cout << "NIE";
-    }
+    std::cout << (isBoardPassedByHorse ? "TAK" : "NIE");
+    std::cout << (done ? "TAK" : "NIE");
 
 
     return 0;

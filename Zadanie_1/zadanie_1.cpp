@@ -4,16 +4,17 @@ int main() {
     int dimension;
     std::cin >> dimension;
     int array[dimension][dimension];
-    int indexOfRowWithMostOnesCount = -1;
+
+    int indexOfRowWithMostOnesCount = 0;
     int previousMaxOnesCount = 0;
     for (int i = 0; i < dimension; ++i) {
         for (int j = 0; j < dimension; ++j) {
-            std::cin >> array[i][j];
+            std::cin >> array[j][i];
         }
         int onesCount = 0;
 
         for (int j = 0; j < dimension; ++j) {
-            if (array[i][j] == 1) {
+            if (array[j][i] == 1) {
                 onesCount++;
             }
         }
@@ -22,10 +23,7 @@ int main() {
             previousMaxOnesCount = onesCount;
         }
     }
-
-    if (indexOfRowWithMostOnesCount != -1) {
-        std::cout << indexOfRowWithMostOnesCount << std::endl;
-    }
+    std::cout << indexOfRowWithMostOnesCount << std::endl;
 
     return 0;
 }
